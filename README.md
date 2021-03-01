@@ -54,35 +54,35 @@ Javascript é uma linguagem **dinamicamente tipada**, sem necessidade de declara
 ### Tipos de dados
 Dentre os tipos de dados existentes, temos:
 - **Number**: Um número (seja ele int ou float)
-    ```
+    ```javascript
     let meuNumero = 5;
     let meuNumero2 = 15.754
     ```
 - **String**: Uma sequência de caracteres (não existe char)
-    ```
+    ```javascript
     let minhaString = "Olá, mundo!"; //Válido
     let minhaString2 = 'Olá, mundo'; //Também válido!
     ```
 - **Boolean**: true ou false
-    ```
+    ```javascript
     let oCodelabEhPerfeito = true;
 
     //Você pode também atribuir expressões a booleanos!
     let cincoEhMenorQueDois = 5 < 2 //false 
     ```
 - **undefined**: Uma variável que não foi inicializada
-    ```
+    ```javascript
     let variavel; //Até que seja atribuido um valor, variavel é undefined
     variavel = 2; //Agora variavel é Number
     variavel = "batata";//Agora variavel é String
     //variáveis podem receber valores de qualquer tipo! (O que não significa que deveriam)
     ```
 - **null**: Só null mesmo, padrão
-    ```
+    ```javascript
     let nadaPraVerAqui = null;
     ```
 - **Object**: Um objeto, que armazena pares chave-valor de dados. Alguns objetos, como os Arrays, podem armazenar funções que alteram seus próprios valores (ver [Arrays](#Arrays) para exemplos)
-    ```
+    ```javascript
     let meuObjeto = {chave1: 1, chave2: "valor da chave 2"};
     meuObjeto.chave1; //Retorna o valor 1
     meuObjeto["chave2"]; //Retorna o valor "valor da chave 2";
@@ -102,7 +102,7 @@ Existem 3 tipos de declarações de variáveis em javascript:
 
 - **let**: Variável com escopo local
 - **var**: Variável com escopo global
-    ```
+    ```javascript
     if(true){
         var chegouNoIf = 5;
     }
@@ -124,7 +124,7 @@ Existem 3 tipos de declarações de variáveis em javascript:
     issoNemExiste;
     ```
 - **const**: Constante com o mesmo escopo do let. A variável não pode ser reatribuída, mas, **chaves de objetos declarados com const podem ser modificadas**
-    ```
+    ```javascript
     const valorConstante = 5;
     valorConstante = 3; //Erro!
 
@@ -135,16 +135,16 @@ Existem 3 tipos de declarações de variáveis em javascript:
 ## Comparações
 As comparações podem ser feitas com os operadores típicos (==, >, <, !=, >= e <=).
 Mas, as comparações feitas com == e != são flexíveis. Veja no exemplo:
-```
-if (55 == "55"){
-    console.log("Sim, é igual"); //Essa linha será executada, imprimindo "Sim, é igual" no console.
+```javascript
+    if (55 == "55"){
+        console.log("Sim, é igual"); //Essa linha será executada, imprimindo "Sim, é igual" no console.
 }
 ```
 Muitas vezes, isso pode ser um problema, por permitir que comparações de variáveis de tipos diferentes seja feita, portanto, o uso dos operadores == e != não é recomendado.
 Ao invés disso, **use os operadores === e !==, que comparam conteúdo e tipo das variáveis.**
-```
-if (55 === "55!){
-    console.log("Sim, é igual"); //Essa linha não será executada dessa vez
+```javascript
+    if (55 === "55!){
+        console.log("Sim, é igual"); //Essa linha não será executada dessa vez
 }
 ```
 
@@ -157,7 +157,7 @@ Javascript oferece suporte às estruturas típicas if, else, else if e switch ca
 ## Estruturas de repetição
 Javascript oferece suporte às estruturas típicas for, while, do while, break e continue.
 Há também as estruturas for in, para iterar sobre as chaves de um objeto, e for of, para iterar sobre os valores de um Array.
-```
+```javascript
 let meuObjeto = {chave1: "valor1", chave2: "valor2", chave3: "valor3"};
 for (let chave in meuObjeto){
     console.log(chave); //Imprime chave1, chave2 e chave3
@@ -173,7 +173,7 @@ E, falando em arrays...
 ## Arrays
 Arrays em javascript nada mais são que um tipo de objeto. A diferença é que as chaves de um array são definidas automaticamente em ordem incremental (0, 1, 2, e assim em diante).
 Arrays podem ser inicializados com [] e contém alguns métodos que podem inserir ou remover valores, simulando estruturas de dados como pilhas e filas conforme for necessário.
-```
+```javascript
 let meuArray = []; //Arrays também podem ser inicializados vazios
 
 //A função Array.push(valor) insere o valor no fim do array.
@@ -196,7 +196,7 @@ meuArray.shift(); //[1,2]
 As funções em Javascript podem ser declaradas de duas maneiras:
 ### Declarações típicas 
 Funções podem ser declaradas normalmente através da palavra-chave **function**:
-```
+```javascript
     function logStuff (nome) {
         console.log("Hello, " + nome + "!");
     }
@@ -206,24 +206,24 @@ Funções podem ser declaradas normalmente através da palavra-chave **function*
 
 ### Arrow functions
 Funções também podem ser declaradas atribuindo seus valores a variáveis conforme a seguinte sintaxe:
-```
+```javascript
     let soma = (a,b) => {
         return a + b;
     }
     console.log(soma(3,4)); //Imprime 7.
 ```
 Para arrow functions de uma linha, pode ser usada a seguinte sintaxe:
-```
+```javascript
     let soma = (a,b) => a + b; //Exatamente a mesma função do exemplo anterior
 ```
 Arrow functions com apenas um argumento podem ser representadas sem parênteses no argumento:
-```
+```javascript
     let soma2 = a => a + 2; //Retorna o valor passado + 2
     console.log(soma2(10)); //Imprime 12
 ```
 ### Funções são variáveis como quaisquer outras
 Independente do tipo de declaração utilizado, a função será tratada como uma variável, podendo ter seu valor sobreescrito (prática não recomendada) ou mesmo sendo passadas como argumentos de outras funções, conforme o exemplo:
-```
+```javascript
     //Função que retorna true se o número for par ou false se o número for ímpar
     function ehPar (valor){
         return valor%2 === 0;
@@ -252,7 +252,7 @@ Independente do tipo de declaração utilizado, a função será tratada como um
 
 ### Funções anônimas
 Em alguns casos, queremos usar funções apenas como argumento para alguma outra função, sem necessidade de repetir seu uso. Nesses casos, podemos utilizar funções anônimas, como nesse exemplo, que reimplementa o exemplo anterior:
-```
+```javascript
     function imprimirFiltrado(arr,teste){
         for(let value of arr){
             if(teste(value)){
@@ -272,7 +272,7 @@ Como podemos ver, funções anônimas podem ser declaradas com qualquer sintaxe 
 ## Chamadas assíncronas
 No javascript, algumas chamadas feitas são assíncronas e retornam Promises.
 Esse conceito pode ser bastante abstrato, mas, basicamente, o que acontece:
-```
+```javascript
     //funcaoAssincrona retorna alguma Promise com um JSON
     const resultado = funcaoAssincrona();
     console.log(resultado); //undefined
@@ -289,7 +289,7 @@ Funções assíncronas retornam objetos especiais do tipo Promise. Não há nece
 
 Há vários jeitos de lidar com Promises, mas, o jeito de fazer isso que te permite ter um código mais limpo é declarar uma função assíncrona.
 Funções assíncronas são declaradas com a palavra-chave **async** antes de function e permitem o uso do comando **await** em seu corpo, conforme esse exemplo, reimplementando o exemplo anterior de maneira adequada:
-```
+```javascript
     async function fazerCoisas(){
         /*O await faz com que a função não saia dessa linha até que a promise 
         retornada por funcaoAssincrona seja resolvida.*/
@@ -305,7 +305,7 @@ Note que como fazerCoisas() é uma função assíncrona, se tivessemos algum uso
 ### Callbacks
 Outro jeito comum de se lidar com chamadas assíncronas são os callbacks. Callbacks são funções que recebem como valor o conteúdo retornado pela função que chama o Callback e usam esse valor para algo. 
 No caso das Promises, temos o método Promise.then(resolve,reject), que recebe a função resolve, que é executada se a promise funcionar corretamente e a função reject, que é chamada se occorer algum erro durante a execução da primeira função.
-```
+```javascript
     //funcaoAssincrona continua retornando uma Promise com um JSON
     const promiseCaputrada = funcaoAssincrona();
     promiseCapturada.then((res) => {
@@ -316,7 +316,7 @@ No caso das Promises, temos o método Promise.then(resolve,reject), que recebe a
     })
 ```
 Para implementar seus próprios callbacks em funções async, basta que as funções recebam um parâmetro que seja uma função e então executem esse parâmetro-função, conforme o exemplo:
-```
+```javascript
     const fazerCoisas = async (callback) => {
         const res = await algumaFuncaoAssincrona();
         callback(res);
@@ -326,13 +326,13 @@ Para implementar seus próprios callbacks em funções async, basta que as funç
 ## Mais sobre objetos
 ### Objetos globais
 No Javascript, alguns objetos estão sempre presentes, sem a necessidade de serem instanciados. A exemplo disso, temos o objeto **document**, que é permite a manipulação do HTML de uma página, o objeto **console** que nos possibilita imprimir coisas no console e o objeto **Math**, que nos dá uma série de funções utilitárias matemáticas. Para utilizar um desses objetos, basta os invocar como se já tivessem sido declarados.
-```
+```javascript
     console.log(Math.sqrt(16)); //Imprime 4
 ```
 ### Desestruturação (destructuring)
 ### Desestruturação de objetos
 As vezes, temos um objeto muito grande e precisamos extrair apenas algumas propriedades dele. Nessas horas, podemos utilizar a declaração através de desestruturação de objetos, conforme o exemplo:
-```
+```javascript
     const myObject = {
         pi: 3.1415,
         phi: 1.618,
@@ -348,7 +348,7 @@ As vezes, temos um objeto muito grande e precisamos extrair apenas algumas propr
 ```
 ### Desestruturação de arrays
 Também podemos desestruturar arrays para obter alguns de seus valores. 
-```
+```javascript
     const myArray = [5,4,3,2,1];
     let [primeiroValor, segundoValor] = myArray;
     console.log(primeiroValor); //Imprime 5
@@ -356,7 +356,7 @@ Também podemos desestruturar arrays para obter alguns de seus valores.
 
 ```
 Na desestruturação de Arrays também podemos ignorar valores não desejados.
-```
+```javascript
     const myArray = [5,4,3,2,1];
     let [primeiroValor, , terceiroValor] = myArray;
     console.log(primeiroValor); //Imprime 5
@@ -364,7 +364,7 @@ Na desestruturação de Arrays também podemos ignorar valores não desejados.
 ```
 ### Desestruturação renomeando
 Em ambas as desestruturações, podemos também declarar variáveis com novos nomes extraindo campos do objeto
-```
+```javascript
     const myObject = {
         pi: 3.1415,
         phi: 1.618,
