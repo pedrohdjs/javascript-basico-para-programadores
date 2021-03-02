@@ -5,31 +5,30 @@ Todo o conteúdo aqui foi baseado em experiência prévia e na [documentação d
 O repositório está sempre aberto para novas pull requests com correções e conteúdo adicional!
 
 ## Tabela de Conteúdos
-  * [O que o Javascript faz?](#o-que-o-javascript-faz-)
+  * [O que o Javascript faz?](#o-que-o-javascript-faz)
   * [Como executar Javascript](#como-executar-javascript)
-  * [Variáveis](#vari-veis)
+  * [Variáveis](#variáveis)
     + [Tipos de dados](#tipos-de-dados)
-    + [Tipos de declarações](#tipos-de-declara--es)
-  * [Comparações](#compara--es)
+    + [Tipos de declarações](#tipos-de-declarações)
+  * [Comparações](#comparações)
   * [Outros operadores](#outros-operadores)
-  * [Estruturas de decisão](#estruturas-de-decis-o)
-  * [Estruturas de repetição](#estruturas-de-repeti--o)
+  * [Estruturas de decisão](#estruturas-de-decisão)
+  * [Estruturas de repetição](#estruturas-de-repetição)
   * [Arrays](#arrays)
-  * [Funções](#fun--es)
-    + [Declarações típicas](#declara--es-t-picas)
+  * [Funções](#funções)
+    + [Declarações típicas](#declara--es-típicas)
     + [Arrow functions](#arrow-functions)
-    + [Funções são variáveis como quaisquer outras](#fun--es-s-o-vari-veis-como-quaisquer-outras)
-    + [Funções anônimas](#fun--es-an-nimas)
-  * [Chamadas assíncronas](#chamadas-ass-ncronas)
+    + [Funções são variáveis como quaisquer outras](#funções-são-variáveis-como-quaisquer-outras)
+    + [Funções anônimas](#funções-anônimas)
+  * [Chamadas assíncronas](#chamadas-assíncronas)
     + [Promises](#promises)
-    + [Funções assíncronas](#fun--es-ass-ncronas)
+    + [Funções assíncronas](#funções-assíncronas)
     + [Callbacks](#callbacks)
   * [Mais sobre objetos](#mais-sobre-objetos)
     + [Objetos globais](#objetos-globais)
-    + [Desestruturação (destructuring)](#desestrutura--o--destructuring-)
-    + [Desestruturação de objetos](#desestrutura--o-de-objetos)
-    + [Desestruturação de arrays](#desestrutura--o-de-arrays)
-    + [Desestruturação renomeando](#desestrutura--o-renomeando)
+    + [Desestruturação de objetos](#desestruturação-de-objetos)
+    + [Desestruturação de arrays](#desestruturação-de-arrays)
+    + [Desestruturação renomeando](#desestruturação-renomeando)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -133,7 +132,7 @@ Existem 3 tipos de declarações de variáveis em javascript:
     ```
 
 ## Comparações
-As comparações podem ser feitas com os operadores típicos (==, >, <, !=, >= e <=).
+As comparações podem ser feitas com os operadores típicos (`==`, `>`, `<`, `!=`, `>=` e `<=`).
 Mas, as comparações feitas com == e != são flexíveis. Veja no exemplo:
 ```javascript
     if (55 == "55"){
@@ -329,7 +328,6 @@ No Javascript, alguns objetos estão sempre presentes, sem a necessidade de sere
 ```javascript
     console.log(Math.sqrt(16)); //Imprime 4
 ```
-### Desestruturação (destructuring)
 ### Desestruturação de objetos
 As vezes, temos um objeto muito grande e precisamos extrair apenas algumas propriedades dele. Nessas horas, podemos utilizar a declaração através de desestruturação de objetos, conforme o exemplo:
 ```javascript
